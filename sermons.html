@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunday Sermons | One Body Ministries</title>
+  <meta name="description" content="Listen to Sunday morning sermon recordings from One Body Ministries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="One Body Ministries Home">
+        <img src="OBMlogo.png" alt="" class="logo-mark" width="48" height="48">
+        <img src="OBMwordmark.png" alt="One Body Ministries Inc." class="logo-wordmark">
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="live.html">Live Service</a></li>
+          <li><a href="sermons.html" class="active">Sermons</a></li>
+          <li><a href="bible-study.html">Bible Study</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Sunday Sermons</h1>
+        <p>Audio recordings from Sunday morning services.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container" style="max-width: 800px;">
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem;">Sermon audio files will appear here. Upload recordings to the site or link them from a hosting service, and they can be listed with an audio player for each message.</p>
+
+        <div class="audio-list">
+          <!-- Example entry — replace with real files as they become available -->
+          <article class="audio-item">
+            <div class="audio-info">
+              <h3>Sunday Sermon</h3>
+              <p class="audio-date">Most recent message</p>
+            </div>
+            <audio controls preload="none" style="width: 100%; margin-top: 0.75rem;">
+              <source src="#" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </article>
+        </div>
+
+        <p style="margin-top: 2.5rem; text-align: center; color: var(--text-muted); font-size: 0.95rem;">
+          To add a new sermon: place the audio file in this folder and update the source link above, or send the file and title/date so it can be added.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <span class="logo-name">One Body Ministries Inc.</span>
+          <span class="logo-tag">Bringing Help. Sharing Hope.</span>
+        </div>
+        <p>A 501(c)(3) nonprofit serving Jesus Christ by serving others throughout Indianapolis and beyond.</p>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>3132 Carson Ave<br>Indianapolis, IN 46227</p>
+        <p><a href="tel:+13177864316">317-786-4316</a></p>
+      </div>
+      <div class="footer-nav">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="live.html">Live Service</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="bible-study.html">Bible Study</a></li>
+          <li><a href="contact.html">Contact & Prayer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> One Body Ministries Inc. All rights reserved. Built to serve the body of Christ.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

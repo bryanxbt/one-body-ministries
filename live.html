@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Service | One Body Ministries</title>
+  <meta name="description" content="Watch the Sunday morning service at One Body Ministries live at 10:00 AM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="One Body Ministries Home">
+        <img src="OBMlogo.png" alt="" class="logo-mark" width="48" height="48">
+        <img src="OBMwordmark.png" alt="One Body Ministries Inc." class="logo-wordmark">
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="live.html" class="active">Live Service</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="bible-study.html">Bible Study</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Sunday Service</h1>
+        <p>Join us live every Sunday morning at 10:00 AM.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container" style="max-width: 900px;">
+        <div class="stream-container">
+          <!-- Replace the src with your YouTube live embed URL or channel live URL when ready -->
+          <div class="youtube-placeholder">
+            <p style="margin-bottom: 1rem; font-size: 1.1rem;">The Sunday 10:00 AM service stream will appear here.</p>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Once your YouTube channel is set up for live streaming, we will embed the live player here so the congregation and visitors can watch directly on this page.</p>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener" class="btn btn-primary">Open YouTube</a>
+          </div>
+          <!-- Example embed (uncomment and replace VIDEO_ID when ready):
+          <iframe width="100%" height="506" src="https://www.youtube.com/embed/VIDEO_ID" title="Sunday Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          -->
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <p style="color: var(--text-muted);">Service time: Sundays at 10:00 AM<br>3132 Carson Ave, Indianapolis, IN 46227</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <span class="logo-name">One Body Ministries Inc.</span>
+          <span class="logo-tag">Bringing Help. Sharing Hope.</span>
+        </div>
+        <p>A 501(c)(3) nonprofit serving Jesus Christ by serving others throughout Indianapolis and beyond.</p>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>3132 Carson Ave<br>Indianapolis, IN 46227</p>
+        <p><a href="tel:+13177864316">317-786-4316</a></p>
+      </div>
+      <div class="footer-nav">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="live.html">Live Service</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="bible-study.html">Bible Study</a></li>
+          <li><a href="contact.html">Contact & Prayer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> One Body Ministries Inc. All rights reserved. Built to serve the body of Christ.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
