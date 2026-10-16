@@ -198,9 +198,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* Hero */
 .hero {
   position: relative;
-  min-height: 78vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-image:
     linear-gradient(160deg, rgba(75, 46, 131, 0.78) 0%, rgba(58, 36, 102, 0.72) 45%, rgba(75, 46, 131, 0.65) 100%),
     url("building.png");
@@ -209,6 +210,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   background-repeat: no-repeat;
   color: var(--white);
   overflow: hidden;
+  text-align: center;
 }
 .hero-overlay {
   position: absolute;
@@ -218,52 +220,24 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero-content {
   position: relative;
-  padding: var(--space-xl) 0;
-  max-width: 720px;
-}
-.hero-eyebrow {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(247, 245, 237, 0.85);
-  margin-bottom: 1rem;
-}
-.hero h1 {
-  color: var(--white);
-  margin-bottom: 1.25rem;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.2);
-}
-.hero-lead {
-  font-size: 1.15rem;
-  font-weight: 300;
-  line-height: 1.7;
-  color: rgba(247, 245, 237, 0.95);
-  margin-bottom: 2rem;
-  max-width: 540px;
-}
-.hero-ctas {
+  padding: var(--space-xl) 1rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 900px;
 }
-.hero .btn-primary {
-  background: var(--olive);
-  border-color: var(--olive);
-  color: var(--white);
+.hero-logo {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));
 }
-.hero .btn-primary:hover {
-  background: var(--olive-dark);
-  border-color: var(--olive-dark);
-}
-.hero .btn-secondary {
-  color: var(--white);
-  border-color: rgba(255,255,255,0.7);
-}
-.hero .btn-secondary:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: var(--white);
-  color: var(--white);
+.hero-wordmark {
+  width: min(100%, 680px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
 }
 
 /* Mission strip */
