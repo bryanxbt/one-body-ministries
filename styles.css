@@ -198,7 +198,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* Hero */
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 62vh;
   display: flex;
   align-items: center;
   justify-content: center;
