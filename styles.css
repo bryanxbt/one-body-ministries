@@ -1,0 +1,688 @@
+/* ============================================
+   One Body Ministries — Design Tokens
+   ============================================ */
+:root {
+  /* Brand colors from kit */
+  --purple: #4B2E83;
+  --purple-dark: #3a2466;
+  --olive: #7A8153;
+  --olive-dark: #5f6640;
+  --ivory: #F7F5ED;
+  --charcoal: #2E2E2E;
+  --white: #ffffff;
+
+  /* Derived */
+  --text: var(--charcoal);
+  --text-muted: #5a5a5a;
+  --bg: var(--ivory);
+  --surface: var(--white);
+  --accent: var(--purple);
+  --accent-2: var(--olive);
+
+  /* Type */
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+
+  /* Space & radius */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --radius: 6px;
+  --radius-lg: 12px;
+  --max: 1100px;
+  --header-h: 4.5rem;
+}
+
+/* Reset & base */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--purple); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--olive-dark); }
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin: 0 0 0.6em;
+}
+h1 { font-size: clamp(2.1rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.25rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1em; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.container {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 245, 237, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(46, 46, 46, 0.08);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+  gap: 1rem;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.logo-wordmark {
+  height: 36px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.logo-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--purple);
+  letter-spacing: 0.02em;
+}
+.logo-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--olive);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.site-nav ul {
+  display: flex;
+  gap: 1.75rem;
+}
+.site-nav a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  text-decoration: none;
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--purple);
+  border-bottom-color: var(--olive);
+}
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--charcoal);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.6rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  min-height: 48px;
+}
+.btn-primary {
+  background: var(--purple);
+  color: var(--white);
+  border-color: var(--purple);
+}
+.btn-primary:hover {
+  background: var(--purple-dark);
+  border-color: var(--purple-dark);
+  color: var(--white);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--purple);
+  border-color: var(--purple);
+}
+.btn-secondary:hover {
+  background: var(--purple);
+  color: var(--white);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(160deg, rgba(75, 46, 131, 0.78) 0%, rgba(58, 36, 102, 0.72) 45%, rgba(75, 46, 131, 0.65) 100%),
+    url("building.png");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  color: var(--white);
+  overflow: hidden;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(247, 245, 237, 0.06) 0%, transparent 55%);
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  padding: var(--space-xl) 0;
+  max-width: 720px;
+}
+.hero-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(247, 245, 237, 0.85);
+  margin-bottom: 1rem;
+}
+.hero h1 {
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.hero-lead {
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(247, 245, 237, 0.95);
+  margin-bottom: 2rem;
+  max-width: 540px;
+}
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.hero .btn-primary {
+  background: var(--olive);
+  border-color: var(--olive);
+  color: var(--white);
+}
+.hero .btn-primary:hover {
+  background: var(--olive-dark);
+  border-color: var(--olive-dark);
+}
+.hero .btn-secondary {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.7);
+}
+.hero .btn-secondary:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--white);
+  color: var(--white);
+}
+
+/* Mission strip */
+.mission-strip {
+  background: var(--purple);
+  color: var(--ivory);
+  padding: var(--space-lg) 0;
+  text-align: center;
+}
+.mission-strip blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 800px;
+  margin-inline: auto;
+}
+.mission-strip cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-style: normal;
+  opacity: 0.85;
+  letter-spacing: 0.03em;
+}
+
+/* Pillars */
+.pillars {
+  padding: var(--space-2xl) 0;
+  background: var(--bg);
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.section-intro {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.pillar {
+  background: var(--surface);
+  border: 1px solid rgba(46,46,46,0.06);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.4rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.pillar:hover {
+  box-shadow: 0 8px 24px rgba(75, 46, 131, 0.1);
+  transform: translateY(-2px);
+}
+.pillar-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 1rem;
+  color: var(--olive);
+}
+.pillar-icon svg { width: 100%; height: 100%; }
+.pillar h3 {
+  color: var(--purple);
+  margin-bottom: 0.5rem;
+}
+.pillar p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Pastor section */
+.pastor-section {
+  padding: var(--space-2xl) 0;
+  background: var(--surface);
+  border-top: 1px solid rgba(46,46,46,0.06);
+}
+.pastor-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.pastor-text p {
+  color: var(--text-muted);
+}
+.pastor-card {
+  background: linear-gradient(145deg, var(--purple) 0%, var(--purple-dark) 100%);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  color: var(--ivory);
+  text-align: center;
+}
+.pastor-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 0.35rem;
+}
+.pastor-name {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.pastor-loc {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* Final CTA */
+.final-cta {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(180deg, var(--olive) 0%, var(--olive-dark) 100%);
+  color: var(--white);
+  text-align: center;
+}
+.final-cta h2 {
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.final-cta p {
+  max-width: 480px;
+  margin: 0 auto 1.75rem;
+  opacity: 0.95;
+}
+.final-cta .btn-primary {
+  background: var(--white);
+  color: var(--purple);
+  border-color: var(--white);
+}
+.final-cta .btn-primary:hover {
+  background: var(--ivory);
+  border-color: var(--ivory);
+}
+.final-cta .btn-secondary {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.75);
+}
+.final-cta .btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--charcoal);
+  color: rgba(247, 245, 237, 0.9);
+  padding-top: var(--space-xl);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: var(--space-lg);
+}
+.footer-brand .logo-name {
+  color: var(--ivory);
+  font-size: 1.15rem;
+}
+.footer-brand .logo-tag {
+  color: var(--olive);
+}
+.footer-brand p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  max-width: 320px;
+}
+.footer-contact h3,
+.footer-nav h3 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 0.85rem;
+}
+.footer-contact p,
+.footer-nav a {
+  font-size: 0.95rem;
+  color: rgba(247, 245, 237, 0.85);
+}
+.footer-nav a {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+.footer-nav a:hover {
+  color: var(--ivory);
+}
+.footer-contact a {
+  color: rgba(247, 245, 237, 0.85);
+  text-decoration: none;
+}
+.footer-contact a:hover {
+  color: var(--ivory);
+}
+.footer-bottom {
+  border-top: 1px solid rgba(247, 245, 237, 0.12);
+  padding: 1.25rem 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* Page hero (inner pages) */
+.page-hero {
+  background: linear-gradient(160deg, var(--purple) 0%, var(--purple-dark) 100%);
+  color: var(--white);
+  padding: var(--space-xl) 0 var(--space-lg);
+  text-align: center;
+}
+.page-hero h1 {
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.page-hero p {
+  max-width: 560px;
+  margin: 0 auto;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Content sections */
+.content-section {
+  padding: var(--space-xl) 0;
+}
+.content-section .prose {
+  max-width: 680px;
+  margin-inline: auto;
+}
+.prose h2 {
+  margin-top: 2rem;
+}
+.prose p {
+  color: var(--text-muted);
+}
+
+/* Contact form */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+}
+.contact-info h2 {
+  margin-bottom: 1rem;
+}
+.contact-info p {
+  color: var(--text-muted);
+}
+.info-block {
+  margin-top: 1.75rem;
+}
+.info-block h3 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 0.4rem;
+}
+.info-block a {
+  color: var(--purple);
+  font-weight: 500;
+  text-decoration: none;
+}
+.info-block a:hover {
+  text-decoration: underline;
+}
+.form-card {
+  background: var(--surface);
+  border: 1px solid rgba(46,46,46,0.08);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+.form-card h2 {
+  margin-bottom: 0.35rem;
+}
+.form-card > p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+.form-group {
+  margin-bottom: 1.15rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  color: var(--charcoal);
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border: 1px solid rgba(46,46,46,0.18);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--charcoal);
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(75, 46, 131, 0.15);
+}
+.form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+.form-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+/* Ministries cards */
+.ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.ministry-card {
+  background: var(--surface);
+  border: 1px solid rgba(46,46,46,0.07);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+.ministry-card h3 {
+  color: var(--purple);
+  margin-bottom: 0.5rem;
+}
+.ministry-card p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pillar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pastor-grid,
+  .contact-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .ministry-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-toggle { display: flex; }
+  .site-nav {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: var(--ivory);
+    border-bottom: 1px solid rgba(46,46,46,0.1);
+    padding: 1rem 0;
+    display: none;
+  }
+  .site-nav.open { display: block; }
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+    width: min(100% - 2rem, var(--max));
+    margin-inline: auto;
+  }
+  .site-nav a {
+    display: block;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(46,46,46,0.06);
+  }
+  .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    min-height: auto;
+    padding: 3.5rem 0;
+  }
+  .logo-tag { display: none; }
+  .logo-wordmark {
+    height: 28px;
+    max-width: 160px;
+  }
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-ctas {
+    flex-direction: column;
+  }
+  .btn { width: 100%; }
+}

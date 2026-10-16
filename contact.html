@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Prayer | One Body Ministries</title>
+  <meta name="description" content="Contact One Body Ministries in Indianapolis. Request prayer, get help, or learn how to serve. Pastor Chris Dunn · 3132 Carson Ave · 317-786-4316">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="One Body Ministries Home">
+        <img src="OBMlogo.png" alt="" class="logo-mark" width="48" height="48">
+        <img src="OBMwordmark.png" alt="One Body Ministries Inc." class="logo-wordmark">
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact &amp; Prayer</h1>
+        <p>We are here to help, to pray, and to walk with you in Christ.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2>Reach Out</h2>
+          <p>Whether you need practical help, want someone to pray with you, or sense a call to serve alongside us, we welcome your message. Pastor Chris Dunn and the One Body Ministries family are glad to hear from you.</p>
+
+          <div class="info-block">
+            <h3>Address</h3>
+            <p>3132 Carson Ave<br>Indianapolis, IN 46227</p>
+          </div>
+          <div class="info-block">
+            <h3>Phone</h3>
+            <p><a href="tel:+13177864316">317-786-4316</a></p>
+          </div>
+          <div class="info-block">
+            <h3>Pastor</h3>
+            <p>Chris Dunn</p>
+          </div>
+          <div class="info-block">
+            <h3>Food Pantry</h3>
+            <p>Look for the signs that say “Food Pantry — Meet Needs.” We are here to meet practical needs in the name of Jesus.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2>Send a Message or Prayer Request</h2>
+          <p>Share your need, question, or request. We will respond as we are able and will lift you in prayer.</p>
+          <form id="contact-form" action="#" method="post">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="reason">I am contacting about…</label>
+              <select id="reason" name="reason">
+                <option value="prayer">Prayer request</option>
+                <option value="help">Need practical help</option>
+                <option value="serve">I want to serve</option>
+                <option value="visit">Visit or more information</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="Share what is on your heart…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            <p class="form-note">This form is ready for connection to a form service or email. Until then, you can also call us directly at 317-786-4316.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <span class="logo-name">One Body Ministries Inc.</span>
+          <span class="logo-tag">Bringing Help. Sharing Hope.</span>
+        </div>
+        <p>A 501(c)(3) nonprofit serving Jesus Christ by serving others throughout Indianapolis and beyond.</p>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>3132 Carson Ave<br>Indianapolis, IN 46227</p>
+        <p><a href="tel:+13177864316">317-786-4316</a></p>
+      </div>
+      <div class="footer-nav">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="contact.html">Contact &amp; Prayer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> One Body Ministries Inc. All rights reserved. Built to serve the body of Christ.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple client-side feedback until backend is connected
+    document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you. Your message has been received in spirit. Please also call 317-786-4316 if your need is urgent. We will connect a real form handler next.');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ministries | One Body Ministries</title>
+  <meta name="description" content="See how One Body Ministries brings help and shares hope in Indianapolis — food pantry, community support, and pointing people to a personal relationship with Jesus Christ.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="One Body Ministries Home">
+        <img src="OBMlogo.png" alt="" class="logo-mark" width="48" height="48">
+        <img src="OBMwordmark.png" alt="One Body Ministries Inc." class="logo-wordmark">
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ministries.html" class="active">Ministries</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Our Ministries</h1>
+        <p>Bringing practical help and sharing the hope of Jesus Christ in Indianapolis and beyond.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="prose" style="margin-bottom: 2.5rem;">
+          <p>At One Body Ministries we believe that meeting real needs opens doors for the Gospel, and that the body of Christ is built up through the faithful teaching of Scripture, prayer, and discipleship of every age. Every ministry is done in the name of Jesus, with the goal that people would come to know Him personally and that the people, the pastor, the preacher, and every believing member would be strengthened.</p>
+        </div>
+
+        <div class="ministry-grid">
+          <article class="ministry-card">
+            <h3>Food Pantry</h3>
+            <p>We provide groceries and essentials to families and individuals in our community. Hunger is met with both provision and the love of Christ. Our building signs simply say “Meet Needs” — because that is what we are called to do.</p>
+          </article>
+          <article class="ministry-card">
+            <h3>Homeless Outreach</h3>
+            <p>We go to those without shelter, offering practical help, dignity, and the hope of the Gospel. Jesus said whatever we do for the least of these, we do for Him. We aim to be His hands and feet on the streets of Indianapolis.</p>
+          </article>
+          <article class="ministry-card">
+            <h3>Men’s &amp; Women’s Bible Study</h3>
+            <p>Separate studies for men and women where we open the Word of God together. We seek to grow in sound doctrine, accountability, and practical obedience so that believers are equipped for every good work.</p>
+          </article>
+          <article class="ministry-card">
+            <h3>Prayer Groups</h3>
+            <p>We gather to pray for one another, for the church, for our city, and for the advancement of the Gospel. Prayer is not an afterthought — it is the foundation of all we do as the body of Christ.</p>
+          </article>
+          <article class="ministry-card">
+            <h3>Youth Ministry</h3>
+            <p>We invest in the next generation with biblical teaching, discipleship, and genuine community. Young people are not the church of tomorrow only — they are part of the body of Christ today and need to be rooted in truth.</p>
+          </article>
+          <article class="ministry-card">
+            <h3>Children’s Ministry &amp; Sunday School</h3>
+            <p>We teach children the Word of God in age-appropriate ways so they may know Jesus from their earliest years. Sunday School and children’s ministry are places where the next generation hears the Gospel clearly and sees it lived out.</p>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <p style="color: var(--text-muted); margin-bottom: 1.25rem;">Need help today, or feel called to serve with us?</p>
+          <a href="contact.html" class="btn btn-primary">Contact or Request Prayer</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <span class="logo-name">One Body Ministries Inc.</span>
+          <span class="logo-tag">Bringing Help. Sharing Hope.</span>
+        </div>
+        <p>A 501(c)(3) nonprofit serving Jesus Christ by serving others throughout Indianapolis and beyond.</p>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>3132 Carson Ave<br>Indianapolis, IN 46227</p>
+        <p><a href="tel:+13177864316">317-786-4316</a></p>
+      </div>
+      <div class="footer-nav">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="contact.html">Contact &amp; Prayer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> One Body Ministries Inc. All rights reserved. Built to serve the body of Christ.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

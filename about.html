@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | One Body Ministries</title>
+  <meta name="description" content="Learn about One Body Ministries — a 501(c)(3) nonprofit in Indianapolis led by Pastor Chris Dunn, serving Jesus Christ by helping people build a personal relationship with Him.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="One Body Ministries Home">
+        <img src="OBMlogo.png" alt="" class="logo-mark" width="48" height="48">
+        <img src="OBMwordmark.png" alt="One Body Ministries Inc." class="logo-wordmark">
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>About One Body Ministries</h1>
+        <p>Serving Jesus Christ by serving others — so that people may know Him personally.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container prose">
+        <h2>Our Mission</h2>
+        <p>One Body Ministries is a 501(c)(3) nonprofit organization. We exist to serve Jesus Christ by serving others in the community and throughout Indianapolis. Our heart is to help people build a personal relationship with Jesus Christ.</p>
+        <p>We believe the body of Christ is called to practical love: meeting real needs while faithfully pointing every person to the hope found only in the Lord Jesus. We do not compromise on the truth of Scripture or on our calling to support the people, the pastor, the preacher, and every believing member of the body of Christ.</p>
+
+        <h2>One Body</h2>
+        <p>The name “One Body” comes from the clear teaching of Scripture: “For just as the body is one and has many members, and all the members of the body, though many, are one body, so it is with Christ” (1 Corinthians 12:12). We are not a collection of isolated individuals. We are members of one another, called to care for each other and to serve the world in Jesus’ name.</p>
+
+        <h2>Pastor Chris Dunn</h2>
+        <p>Pastor Chris Dunn leads One Body Ministries with a pastoral heart for both the practical needs of the community and the spiritual growth of believers. Under his leadership the ministry seeks to be a place where the Gospel is lived out in word and deed — bringing help and sharing hope.</p>
+
+        <h2>What Guides Us</h2>
+        <p>Everything we do is measured against two questions:</p>
+        <ul style="list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-muted);">
+          <li style="margin-bottom: 0.5rem;">Does this strengthen faith and practical life in Christ for the people, the pastor, the preacher, and the believing members of the body?</li>
+          <li style="margin-bottom: 0.5rem;">Is it faithful to Scripture without compromise?</li>
+        </ul>
+        <p>If the answer to either is no, we do not pursue it. Our design, our words, and our work are meant to serve the church, not the culture’s trends.</p>
+
+        <p style="margin-top: 2.5rem;">
+          <a href="contact.html" class="btn btn-primary">Connect With Us</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <span class="logo-name">One Body Ministries Inc.</span>
+          <span class="logo-tag">Bringing Help. Sharing Hope.</span>
+        </div>
+        <p>A 501(c)(3) nonprofit serving Jesus Christ by serving others throughout Indianapolis and beyond.</p>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>3132 Carson Ave<br>Indianapolis, IN 46227</p>
+        <p><a href="tel:+13177864316">317-786-4316</a></p>
+      </div>
+      <div class="footer-nav">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="contact.html">Contact &amp; Prayer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> One Body Ministries Inc. All rights reserved. Built to serve the body of Christ.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
